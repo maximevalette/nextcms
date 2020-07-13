@@ -19,4 +19,9 @@ restart:
 	make stop
 	make start
 package:
-	rm -Rf ./backend ./frontend
+	rm -Rf resources/components resources/pages resources/styles resources/utils
+	cp -R frontend/components resources/
+	cp -R frontend/pages resources/
+	cp -R frontend/styles resources/
+	cp -R frontend/utils resources/
+	git commit -a
