@@ -1,8 +1,8 @@
 import Head from 'next/head'
-import Link from 'next/link'
 import React from 'react';
-import { withApollo } from '../utils/apollo';
+import BLOCK_QUERY from "../apollo/queries/block/block";
 import Layout from '../components/layout'
+import Query from '../components/query'
 
 const Home = () => {
   return (
@@ -11,16 +11,22 @@ const Home = () => {
           <title>Next CMS</title>
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
-        <main>
-          <h1>
-            Next CMS
-          </h1>
-
-          <p>
-            This is your first page.
-          </p>
-        </main>
+        
+        <Query query={BLOCK_QUERY} id="1">
+        {({ data: { block } }) => {
+            return (
+              <main>
+                <h1>
+                  {block.title}
+                </h1>
+  
+                <p>
+                  {block.content}
+                </p>
+              </main>
+            )
+          }}
+        </Query>
     </Layout>
   )
 }
