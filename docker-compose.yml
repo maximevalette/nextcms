@@ -1,0 +1,39 @@
+version: '3'
+services:
+  strapi:
+    image: strapi/strapi
+    environment:
+      NODE_ENV: production
+    volumes:
+      - ./backend:/srv/app
+    labels:
+      - traefik.enable=true
+      - traefik.port=1337
+      - "traefik.frontend.rule=Host:backend.nextcms.mvbest.fr"
+    networks:
+      - nextjs
+      - web
+
+  nextjs:
+    build:
+      context: ./frontend
+      dockerfile: ../Dockerfile
+    env_file:
+      - ./frontend/.env
+    labels:
+      - traefik.enable=true
+      - traefik.port=3000
+      - "traefik.frontend.rule=Host:nextcms.mvbest.fr"
+    links:
+    - "strapi:strapi"
+    depends_on:
+      - strapi
+    networks:
+      - nextjs
+      - web
+
+networks:
+  nextjs:
+    external: false
+  web:
+    external: true

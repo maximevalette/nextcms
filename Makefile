@@ -41,3 +41,5 @@ dist: ## Create the dist for Next CMS from files
 package: ## Create the dist and launches a git commit
 	make dist
 	git commit -a
+clean: ## Remove the setup files
+	rm -Rf resources .gitignore .git
