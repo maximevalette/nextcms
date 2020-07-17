@@ -11,7 +11,7 @@ install: ## Install Next CMS
 	npx create-next-app -e basic-css frontend
 	yarn --cwd ./frontend add @apollo/react-hooks apollo-cache-inmemory apollo-client apollo-link-http graphql graphql-tag isomorphic-unfetch next-with-apollo @apollo/react-ssr react-ga
 	rm -Rf ./frontend/pages ./frontend/styles ./frontend/components ./frontend/utils
-	cp -R ./resources/Dockerfile ./frontend/
+	cp -R ./resources/.env ./frontend/
 	cp -R ./resources/pages ./frontend/
 	cp -R ./resources/styles ./frontend/
 	cp -R ./resources/utils ./frontend/
