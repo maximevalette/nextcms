@@ -21,7 +21,7 @@ const Home = () => {
                   {block.title}
                 </h1>
 
-                <img class="twic" data-src="placeholder:light-blue" width="790" height="300" />
+                <img className="twic" data-src="placeholder:light-blue" width="790" height="300" />
   
                 <p>
                   {block.content}
