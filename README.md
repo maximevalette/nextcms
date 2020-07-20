@@ -3,7 +3,10 @@
 Strapi + GraphQL + Next.js (with GA and SSR)
 
 ```
-make install
+git clone git@github.com:maximevalette/nextcms my-website && \
+cd my-website && \
+make install && \
+make clean
 ```
 
 ## Environment variables
