@@ -22,3 +22,16 @@ For the first page to run correctly you need to create a `Block` collection in S
 
 - `title`: Text
 - `content`: Rich text
+
+## Development
+
+NextCMS run in a Node.js local environment to allow efficient hot reload. You can start both backend and frontend with a single `make` command:
+
+```
+make start
+make stop
+```
+
+## Production
+
+NextCMS comes with a Docker ready production file `docker-compose.yml` with Traefik labels. You need to have a Traefik running with a public `web` network (or you can change it in the file according to your environment).
