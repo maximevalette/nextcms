@@ -35,3 +35,8 @@ make stop
 ## Production
 
 NextCMS comes with a Docker ready production file `docker-compose.yml` with Traefik labels. You need to have a Traefik running with a public `web` network (or you can change it in the file according to your environment).
+
+## Documentation
+
+- Strapi: https://strapi.io/documentation/v3.x/
+- Next.js: https://nextjs.org/docs/getting-started
