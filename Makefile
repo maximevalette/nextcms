@@ -18,6 +18,9 @@ install: ## Install Next CMS
 	cp -R ./resources/components ./frontend/
 	cp -R ./resources/apollo ./frontend/
 	make start
+yarn: ## Install yarn packages
+	yarn --cwd ./backend install
+	yarn --cwd ./frontend install
 reinstall: ## Reinstall Next CMS (Delete and install)
 	rm -Rf backend/ frontend/
 	make install
